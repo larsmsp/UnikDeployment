@@ -6,14 +6,16 @@ logging.basicConfig(level=logging.INFO)
 
 CONFIG_FILE = 'unik.cfg'
 CONFIG_SECTION = 'unik'
-RASPBERRY_IP_OPTION = 'raspberry'
-REPO_OPTION = 'repository'
+RASPBERRY_IP_OPTION = 'raspberry_ip'
+REPO_URL_OPTION = 'repository_url'
+REPO_NAME_OPTION = 'repository_name'
 
 config = SafeConfigParser()
 
 def prompt_repository():
     url = raw_input('Please input git url for your hub project:')
-    config.set(CONFIG_SECTION, REPO_OPTION, url)
+    config.set(CONFIG_SECTION, REPO_URL_OPTION, url)
+    config.set(CONFIG_SECTION, REPO_NAME_OPTION, url.rsplit('/')[-1])
 
 
 def prompt_raspberry_ip():
@@ -29,7 +31,7 @@ def init_config():
     else:
         with open(CONFIG_FILE) as config_fp:
             config.readfp(config_fp)
-    if not config.has_option(CONFIG_SECTION, REPO_OPTION):
+    if not config.has_option(CONFIG_SECTION, REPO_URL_OPTION):
         prompt_repository()
     if not config.has_option(CONFIG_SECTION, RASPBERRY_IP_OPTION):
         prompt_raspberry_ip()
