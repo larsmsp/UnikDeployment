@@ -41,6 +41,7 @@ These settings are stored in a configuration file in the same directory as the s
 ### `$ fab deploy`
 
 This should be your one and only command. This will basically:
+
 1. (Local) git add -p && git commit
 2. (Local) git push
 3. (Remote) git pull
