@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-CONFIG_FILE = 'unik.cfg'
+CONFIG_FILE = 'deploy.cfg'
 CONFIG_SECTION = 'unik'
 RASPBERRY_IP_OPTION = 'raspberry_ip'
 REPO_URL_OPTION = 'repository_url'
