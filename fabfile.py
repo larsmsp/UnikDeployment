@@ -15,7 +15,6 @@ logging.info('Repository name: %s', repo_name)
 logging.info('Raspberry Pi: %s', raspberry_ip)
 
 
-
 env.hosts = [raspberry_ip]
 env.user = 'pi'
 env.password = 'raspberry'
