@@ -29,7 +29,7 @@ def clone():
 
 
 def commit():
-    local('%s add -p' % git_path)
+    local('%s add -A' % git_path)
     local('%s commit -a' % git_path)
 
 
