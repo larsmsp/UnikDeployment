@@ -1,4 +1,4 @@
-# UnikDeployment
+# pi-deploy
 
 Python script for easy deployment to Raspberry Pi's.
 
