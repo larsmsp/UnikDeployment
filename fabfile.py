@@ -25,10 +25,6 @@ def clone():
     run('git clone %s' % repo_url)
 
 
-def repo_exists():
-    return exists(repo_name)
-
-
 def commit():
     local('git add -p && git commit')
 
@@ -47,7 +43,9 @@ def pull():
 
 
 def deploy():
-    if repo_exists():
-        push()
+    directory = 'home/pi/%s' % repo_name
+    if exists(directory):
+        with cd(directory):
+            pull()
     else:
         clone()

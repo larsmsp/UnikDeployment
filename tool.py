@@ -15,7 +15,11 @@ config = SafeConfigParser()
 def prompt_repository():
     url = raw_input('Please input git url for your hub project:')
     config.set(CONFIG_SECTION, REPO_URL_OPTION, url)
-    config.set(CONFIG_SECTION, REPO_NAME_OPTION, url.rsplit('/')[-1])
+    config.set(CONFIG_SECTION, REPO_NAME_OPTION, _get_repository_name(url))
+
+
+def _get_repository_name(url):
+    return url.rsplit('/')[-1].rsplit('.')[0]
 
 
 def prompt_raspberry_ip():
