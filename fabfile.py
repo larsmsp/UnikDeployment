@@ -1,14 +1,14 @@
 import logging
-import tool
+import config
 
 from fabric.api import *
 from fabric.contrib.files import exists
 
-tool.init_config()
-git_path = tool.config.get(tool.GIT_CONFIG_SECTION, tool.GIT_PATH_OPTION)
-repo_url = tool.config.get(tool.REPO_CONFIG_SECTION, tool.REPO_URL_OPTION)
-repo_name = tool.config.get(tool.REPO_CONFIG_SECTION, tool.REPO_NAME_OPTION)
-raspberry_ip = tool.config.get(tool.RASPBERRY_CONFIG_SECTION, tool.RASPBERRY_IP_OPTION)
+config.init_config()
+git_path = config.get(config.GIT_CONFIG_SECTION, config.GIT_PATH_OPTION)
+repo_url = config.get(config.REPO_CONFIG_SECTION, config.REPO_URL_OPTION)
+repo_name = config.get(config.REPO_CONFIG_SECTION, config.REPO_NAME_OPTION)
+raspberry_ip = config.get(config.RASPBERRY_CONFIG_SECTION, config.RASPBERRY_IP_OPTION)
 
 logging.info('Repository URL: %s', repo_url)
 logging.info('Repository name: %s', repo_name)
