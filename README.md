@@ -6,6 +6,7 @@ Python script for easy deployment to Raspberry Pi's.
 
 * Python 2.7
 * pyCrypto
+* A compiler to build pyCrypto source
 * Python Fabric
 
 ## Installation
